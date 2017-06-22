@@ -229,8 +229,10 @@ export class ImageResize {
 	}
 
 	hideSizeDisplay() {
-		document.body.removeChild(this.display);
-		this.display = undefined;
+		if (this.display) {
+			document.body.removeChild(this.display);
+			this.display = undefined;
+		}
 	}
 
 	positionSizeDisplay(rect) {
